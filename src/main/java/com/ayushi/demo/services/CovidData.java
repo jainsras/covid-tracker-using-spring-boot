@@ -54,8 +54,10 @@ public class CovidData {
 		    ls.setState(state);
 		    ls.setCountry(record.get("Country/Region"));
 		    ls.setLatestTotalCases(Integer.parseInt(record.get(record.size()-1)));
-		
-		    System.out.println(ls);
+		    int latestcases = Integer.parseInt(record.get(record.size()-1));
+		    int prevDaycases = Integer.parseInt(record.get(record.size()-2));
+			ls.setDiffFromPrevDay(latestcases - prevDaycases);
+//		    System.out.println(ls);
 		    newStats.add(ls);
 		    
 		}
