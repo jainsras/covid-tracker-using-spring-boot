@@ -28,15 +28,23 @@
       <tr>
         <th>STATE</th>
         <th>COUNTRY</th>
-        <th>TOTAL CASES REPORTED</th>
+        <th>CONFIRMED CASES</th>
         <th>CHANGES SINCE LAST DAY</th>
+        <th>RECOVERED</th>
+        <th>DEATHS</th>
+        <th>ACTIVE</th>
         
       </tr>
-      <tr th:each="stat : ${stats}">
+      <tr th:each="stat : ${stats}" >
         <td th:text="${stat.state}"></td>
         <td th:text="${stat.country}"></td> 
         <td th:text="${stat.latestTotalCases}">0</td>
       	<td th:text="${stat.diffFromPrevDay}">0</td>
+      	<td th:text="${stat.recovered}">0</td>
+      	<td th:text="${stat.deaths}">0</td>
+      	<td th:text="${stat.active}">0</td>
+      	
+      	
       	
       </tr>
     </table>
